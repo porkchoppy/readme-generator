@@ -27,7 +27,7 @@ inquirer.prompt([
     },
     {
       type: 'input',
-      message: 'Did anyone contribute to the project?',
+      message: 'Please list contributors to the project.',
       name: 'contributing',
     },
     {
@@ -46,7 +46,11 @@ inquirer.prompt([
   });
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  fs.writeFile("README.md", data, (err) => 
+    err ? console.log(err) : console.log("README has been generated successfully.")
+  );
+}
 
 // TODO: Create a function to initialize app
 function init() {}
